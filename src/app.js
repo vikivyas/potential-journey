@@ -19,7 +19,7 @@ import $ from 'jquery';
 import firebase from 'firebase/app';
 import firebaseConfig from './firebase-config.json';
 import Auth from './Auth';
-import IpFilter from './IpFilter';
+// import IpFilter from './IpFilter';
 import Router from './Router';
 import 'material-design-lite';
 import {Utils} from './Utils';
@@ -50,7 +50,7 @@ firebase.initializeApp(firebaseConfig.result);
 window.firebase = firebase;
 
 // Starts the IP Filter.
-IpFilter.filterEuCountries();
+// IpFilter.filterEuCountries();
 
 // Load the app.
 $(document).ready(() => {
