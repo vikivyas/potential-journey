@@ -69,7 +69,7 @@ if ('serviceWorker' in navigator) {
 
 // Initialize Google Analytics.
 import(/* webpackPrefetch: true */ 'universal-ga').then((analytics) => {
-  analytics.initialize('UA-25993200-10');
+  analytics.initialize('UA-12464898-16');
   analytics.pageview('/');
 });
 
