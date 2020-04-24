@@ -67,19 +67,17 @@ if (!process.env.FUNCTION_NAME || process.env.FUNCTION_NAME === 'moderatePosts')
   exports.moderatePosts = require('./moderateText').moderatePosts;
 }
 
-/**
+/** Enable this once you get Mailgun API.
  * Send email upon comment flag.
- */
 if (!process.env.FUNCTION_NAME || process.env.FUNCTION_NAME === 'sendEmailOnCommentReport') {
   exports.sendEmailOnCommentReport = require('./sendEmailOnReport').sendEmailOnCommentReport;
-}
+}*/
 
-/**
+/** Enable this once you get Mailgun API.
  * Send email upon post flag.
- */
 if (!process.env.FUNCTION_NAME || process.env.FUNCTION_NAME === 'sendEmailOnPostReport') {
   exports.sendEmailOnPostReport = require('./sendEmailOnReport').sendEmailOnPostReport;
-}
+}*/
 
 /**
  * Mark some users as admins.
