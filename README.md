@@ -33,8 +33,32 @@ Server-side micro-services are built on [Cloud Functions for Firebase](https://f
     ```bash
     firebase functions:config:set mailgun.domain=friendly-pix.com mailgun.key=key-XXXXXXXXXXXXXXXX
     ```
+## Deploy the app on firebase
+
+On new projects, the Realtime Database and Cloud Storage come with default Security rules that prevent all read and writes. You'll need to deploy the security rules and Cloud Functions once first. For this run:
+
+```bash
+firebase deploy --only database,storage`
+```
+
+Please note that all Google Cloud Functions cannot yet be ran locally. You have to deploy them once first if you want these features active (such as image and text moderation). For this run:
+
+```bash
+firebase deploy --only functions
+```
+
+Before deploying this will automatically install all runtime dependencies, transpile the Javascript code to ES5 and install Cloud Functions dependencies. For this run:
+
+```bash
+firebase deploy
+```
+Please don't use **--only hosting**
+
+Then this deploys a new version of your code that will be served from `https://<PROJECT_ID>.firebaseapp.com`
 
 ## Start a local development server
+
+**Please note that all Google Cloud Functions cannot yet be ran locally. You have to deploy them once first if you want these features active (such as image and text moderation).**
 
 Before you start, make sure you're using the latest versions of [Java](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or [JDK](https://openjdk.java.net/install/) and [Node.js](https://nodejs.org/).
 
@@ -56,27 +80,9 @@ This will start `firebase serve` and make sure your Javascript files are transpi
 
 Then open [http://localhost:5000](http://localhost:5000)
 
-> Note 1: On new projects, the Realtime Database and Cloud Storage come with default Security rules that prevent all read and writes. You'll need to deploy the security rules and Cloud Functions once first. For this run: `firebase deploy --only database,storage`
-
-> Note 2: All Cloud Functions cannot yet be ran locally. Deploy them once first if you want these features active (such as image and text moderation). For this run: `firebase deploy --only functions`
-
-
-## Deploy the app
-
-To deploy the app run:
-
-```bash
-firebase deploy
-```
-
-Before deploying this will automatically install all runtime dependencies, transpile the Javascript code to ES5 and install Cloud Functions dependencies.
-Then this deploys a new version of your code that will be served from `https://<PROJECT_ID>.firebaseapp.com`
-
-
 ## Admins
 
 To make a user an admin - allowing him to delete any posts - manually add an entry to `/admins/$index/email: admin@email.com`. For instance `/admins/1/email: bob@gmail.com`.
-
 
 ## Mobile Apps
 
