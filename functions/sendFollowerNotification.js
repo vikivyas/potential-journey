@@ -77,7 +77,7 @@ exports.default = functions.database.ref('/followers/{followedUid}/{followerUid}
           title: 'You have a new follower!',
           body: `${displayName} is now following you.`,
           icon: profilePic || '/images/silhouette.jpg',
-          click_action: `https://friendly-pix.com/user/${followerUid}`,
+          click_action: `./user/${followerUid}`,
         },
       };
 
