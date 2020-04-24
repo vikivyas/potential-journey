@@ -36,6 +36,16 @@ Server-side micro-services are built on [Cloud Functions for Firebase](https://f
 
 ## Start a local development server
 
+Before you start, make sure you're using the latest versions of [Java](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or [JDK](https://openjdk.java.net/install/) and [Node.js](https://nodejs.org/).
+
+To install the Firebase Emulators, use the [Firebase CLI](https://firebase.google.com/docs/cli/) and follow the steps below.
+
+Start the emulator using the following command. The emulator runs during all your tests. This will make sure you have all needed tools and dependecies reday before any build.
+  ```bash
+firebase emulators:start
+```
+Now that you've installed the [emulator](https://firebase.google.com/docs/rules/emulator-setup#realtime-database), [set up tests](https://firebase.google.com/docs/rules/unit-tests) and [generate reports](https://firebase.google.com/docs/rules/emulator-reports) to validate your rules' behavior before them to production.
+
 You can start a local development server by running:
 
 ```bash
