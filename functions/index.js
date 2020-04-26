@@ -41,10 +41,10 @@ if (!process.env.FUNCTION_NAME || process.env.FUNCTION_NAME === 'removeHashtagsI
 /**
  * When an image is uploaded we check if it is flagged as Adult or Violence by the Cloud Vision
  * API and if it is we blur it using ImageMagick.
- */
+ * Enable only if you have enabled billing for your project.
 if (!process.env.FUNCTION_NAME || process.env.FUNCTION_NAME === 'blurOffensiveImages') {
   exports.blurOffensiveImages = require('./blurOffensiveImages').default;
-}
+} */
 
 /**
  * When an account is deleted we delete all the user data in the store as well.
